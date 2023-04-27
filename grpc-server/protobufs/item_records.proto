@@ -1,0 +1,9 @@
+syntax = "proto3";
+message EmptyMessage{}
+message MessageOk{
+    string ack = 1;
+}
+
+service ItemsRecords {
+    rpc PingItemsRecords(EmptyMessage) returns (MessageOk);
+}

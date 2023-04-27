@@ -1,0 +1,21 @@
+syntax = "proto3";
+message EmptyRequest{}
+
+message PingItemsRecordsResponse{
+    string msg = 1;
+}
+
+message Item {
+    string name = 1;
+    string foo = 2;
+    string source = 3;
+}
+
+message GetItemsResponse{
+    repeated Item data = 1;
+}
+
+service ItemsRecords {
+    rpc PingItemsRecords(EmptyRequest) returns (PingItemsRecordsResponse);
+    rpc GetItemsRecords(EmptyRequest) returns (GetItemsResponse);
+}
